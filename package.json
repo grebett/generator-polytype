@@ -1,0 +1,36 @@
+{
+	"name": "generator-polytype",
+	"version": "0.1.0",
+	"description": "This generator, based upon generator-polymer and generator-polymerts, sets a Polymer project written in TypeScript language. Opinionated, it uses micro libraries to handle application logic ignored by Polymer: page.js as a router, oboe.js for streaming-ajax queries and inversify as a Dependency Injection wrapper. Building tools included using Gulp.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grebett/generator-polytype.git"
+	},
+	"files": [
+		"app"
+	],
+	"keywords": [
+		"yeoman-generator",
+		"polymer",
+		"typescript"
+	],
+	"author": "grebett",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/grebett/generator-polytype/issues"
+	},
+	"homepage": "https://github.com/grebett/generator-polytype#readme",
+	"dependencies": {
+		"chalk": "^1.1.1",
+		"generator-npm-init": "^1.2.0",
+		"yeoman-generator": "^0.22.5",
+		"hydrolysis": "^1.15.3",
+		"mkdirp": "^0.5.1",
+		"underscore.string": "^3.1.1"
+	},
+	"devDependencies": {}
+}
