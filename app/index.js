@@ -1,57 +1,44 @@
 var generators = require('yeoman-generator');
 var chalk = require('chalk');
+var path = require('path');
 
 // for infos, see: http://yeoman.io/authoring/
-// flags: --npminit > calls npm-init-generator, to scaffold a package.json file
 module.exports = generators.Base.extend({
 	name: 'polytype',
 	answers: {},
 
 	initializing: {
-		npmInit: function() {
-			if (this.options['npminit']) {
-				this.composeWith('npm-init', {}, {
-					local: require.resolve('generator-npm-init')
-				});
-			}
-		}
 	},
 
 	prompting: {
-		questions: function() {
+	},
+
+	writing: {
+		seed: function() {
 			var done = this.async();
-			this.prompt([{
-				type: 'confirm',
-				name: 'yn',
-				default: false,
-				message: 'yes or no?'
-			}, {
-				type: 'checkbox',
-				name: 'patate',
-				message: 'patate?',
-				choices: ['douce', '{pas douce}']
-			}], function (answers) {
-				this.answers = answers;
+			this.remote('grebett', 'polymer-starter-kit', function (err, remote) {
+				if (err) {
+					console.log(err);
+				}
+				this.fs.copy(path.join(remote.cachePath, ''), '.');
+				this.fs.copy(path.join(remote.cachePath, '.*'), '.'); // dot files
 				done();
 			}.bind(this));
 		}
 	},
 
-	writing: {
-		responses: function() {
-			console.log(this.answers);
+	install: {
+		deps: function() {
+			this.installDependencies({
+				bower: true,
+				npm: true,
+				skipMessage: false,
+				callback: function() {
+				console.log('All dependencies installed!')
+				}
+			});
 		}
-	// 	seed: function() {
-	// 		var done = this.async();
-	// 		this.remote('grebett', 'polymer-starter-kit', function (err, remote) {
-	// 			if (err) {
-	// 				console.log(err);
-	// 			}
-	// 			this.fs.copy(remote.cachePath, 'dest');
-	// 			done();
-	// 		}.bind(this));
-	// 	}
-	},
+	}
 
 // 	end: {
 // 		thanks: function () {
