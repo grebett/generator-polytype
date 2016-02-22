@@ -269,7 +269,7 @@ module GeneratorPolymerTS {
 		}
 
 		constructor() {
-			yeoman.generators.Base.apply(this, arguments);
+			yeoman.Base.apply(this, arguments);
 			//console.log( "Gen.constructor");
 
 			this.yo = <any>this; // this reference as yo.YeomanGeneratorBase
@@ -329,7 +329,7 @@ module GeneratorPolymerTS {
 
 }
 
-var gen = yeoman.generators.Base.extend(GeneratorPolymerTS.Gen.prototype);
+var gen = yeoman.Base.extend(GeneratorPolymerTS.Gen.prototype);
 
 
 module.exports = gen;

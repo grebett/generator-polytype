@@ -12,7 +12,7 @@ var GeneratorPolymerTS;
     // YEOMAN GENERATOR GENERATOR
     var Gen /* extends yeoman.IYeomanGenerator */ = (function () {
         function Gen /* extends yeoman.IYeomanGenerator */() {
-            yeoman.generators.Base.apply(this, arguments);
+            yeoman.Base.apply(this, arguments);
             //console.log( "Gen.constructor");
             this.yo = this; // this reference as yo.YeomanGeneratorBase
             this.yo.argument("elementName", { required: true, type: 'string', desc: "element name. Must contains dash symbol!" });
@@ -197,5 +197,5 @@ var GeneratorPolymerTS;
     })();
     GeneratorPolymerTS.Gen /* extends yeoman.IYeomanGenerator */ = Gen /* extends yeoman.IYeomanGenerator */;
 })(GeneratorPolymerTS || (GeneratorPolymerTS = {}));
-var gen = yeoman.generators.Base.extend(GeneratorPolymerTS.Gen.prototype);
+var gen = yeoman.Base.extend(GeneratorPolymerTS.Gen.prototype);
 module.exports = gen;
