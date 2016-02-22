@@ -8,6 +8,18 @@ module.exports = generators.Base.extend({
 	answers: {},
 
 	initializing: {
+		hello: function () {
+			console.log(chalk.yellow(
+				' _____      _       _\n' +
+				'|  __ \\    | |     | |\n' +
+				'| |__) |__ | |_   _| |_ _   _ _ __   ___\n' +
+				'|  ___/ _ \\| | | | | __| | | | \'_ \\ / _ \\\n' +
+				'| |  | (_) | | |_| | |_| |_| | |_) |  __/\n' +
+				'|_|   \\___/|_|\\__, |\\__|\\__, | .__/ \\___|\n' +
+				'               __/ |     __/ | |\n' +
+				'              |___/     |___/|_|         \n' +
+				'============================================='));
+		}
 	},
 
 	prompting: {
@@ -38,16 +50,12 @@ module.exports = generators.Base.extend({
 				}
 			});
 		}
-	}
+	},
 
-// 	end: {
-// 		thanks: function () {
-// 			console.log(chalk.magenta(
-// '╔══╦╦╦═╦═╦╦╗ ╔╦╦═╦╦╗\n\
-// ╚╗╔╣╩║╬║║║═╣ ║║║║║║║\n\
-//  ║║║╦║║║║║║║ ╠╗║║║║║\n\
-//  ╚╝╚╩╩╩╩╩╩╩╝ ╚═╩═╩═╝'));
-// 			console.log('Thank you for using the ' + this.name + ' generator. Happy coding!');
-// 		}
-// 	}
+	end: {
+		thanks: function () {
+			console.log(chalk.magenta('============================================='));
+			console.log('Thank you for using the ' + this.name + ' generator. Happy coding!');
+		}
+	}
 });
