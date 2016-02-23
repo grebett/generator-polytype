@@ -1,14 +1,13 @@
 ![](http://yeoman.io/static/yeoman-02.dc21b7fc1d.png)
 src: yeoman.io
 
-## Generator for Polymer based on Polymer Starter Kit: using TypeScript and some micro-libraries for routing, DI, AJAX, etc...
+## Generator for Polymer based on Polymer Starter Kit: using TypeScript and some micro-libraries for routing, AJAX, etc...
 
 This generator relies mainly on my own [fork](https://github.com/grebett/polymer-starter-kit) of polymer-starter-kit.
 It scaffolds a simple application with [Polymer](https://www.polymer-project.org/1.0/) and [Typescript](http://www.typescriptlang.org/), plus some micro-libraries:
 
 + [page.js](https://visionmedia.github.io/page.js/) for routing
 + [oboe.js](https://github.com/jimhigson/oboe.js) for AJAX (and streaming queries)
-+ [inversify](http://inversify.io/) for Dependency Injection
 
 ## Cave at
 
