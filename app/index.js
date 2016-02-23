@@ -73,7 +73,7 @@ module.exports = generators.Base.extend({
 
 	install: {
 		deps: function() {
-			process.chdir(this.dir);;
+			process.chdir(this.dir);
 			console.log(chalk.blue('┃'), 'installing dependencies');
 			this.installDependencies({
 				bower: true,
@@ -88,6 +88,7 @@ module.exports = generators.Base.extend({
 
 	end: {
 		cleaning: function () {
+      process.chdir('..');
 			var done = this.async();
 			console.log(chalk.blue('┃'), 'cleaning the temp directory');
 			del(['tmp']).then(function (paths) {
