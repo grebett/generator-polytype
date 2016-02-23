@@ -1,14 +1,11 @@
-
 <% if (dependencies) { dependencies.forEach(function (componentName) { %><link rel="import" href="<%= pathToBower %>/<%= componentName %>/<%= componentName %>.html">
 <% });} %>
-
-
 <dom-module id="<%=elementName%>">
+	<style>
+		/* your css here */
+	</style>
 	<template>
-		 <p>I'm a DOM element. This is my local DOM!</p>
-		 <p>And this is 'greet' property: <span>{{greet}}</span></p>
-		 <p><button on-click="handleClick">Change greet</button></p>
-		 <p>Computed property 'greetAll' is <span>{{greetAll}}</span></p>
+		<!-- your html here -->
 	</template>
 </dom-module>
 
